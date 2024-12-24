@@ -9,13 +9,13 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState("profile"); // State for active tab
-
+ 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (!token || !storedUser) {
-      navigate("/login");
+      navigate("/login"); 
     }
   }, [navigate]);
 
