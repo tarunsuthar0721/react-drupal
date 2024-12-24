@@ -25,6 +25,8 @@ export const loginUser = async (email, password) => {
         uid: response.data.uid ,
         name: response.data.name ,
         email: response.data.email ,
+        profile_picture: response.data.profile_picture ,
+        // picture: response.data.picture ,
       }));
 
       return {
@@ -33,6 +35,7 @@ export const loginUser = async (email, password) => {
           uid: response.data.uid,
           name: response.data.name,
           email: response.data.email,
+          profile_picture: response.data.profile_picture,
         },
       };
     } else {
