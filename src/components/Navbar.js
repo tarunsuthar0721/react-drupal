@@ -2,13 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-// import { logoutUser } from "../services/Api";
-import Image from "../assets/images/Avatar-659652_640.webp";
+import { useMediaQuery } from "react-responsive";
+import Profile from "../assets/images/Avatar-659652_640.webp";
+import Logo from "../assets/images/logo.svg";
 import "../assets/styles/global.css";
+import "../assets/styles/Navbar.css";
+
 
 const Navbar = () => {
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
+  const isDesktop = useMediaQuery({ minWidth: 992 });
 
   const handleLogout = async () => {
     try {
@@ -27,10 +31,15 @@ const Navbar = () => {
   
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg mt-2">
+      <div className={`container ${isDesktop ? "rounded-pill" : "rounded"}`}>
         <Link className="logo-head navbar-brand" to="/">
-          My-ReactApp
+         <img
+              src={Logo} // Replace with the actual profile image path
+              alt="Profile"
+              className="m-2 px-2"
+              style={{ width: "100px", height: "30px", objectFit: "cover" }}
+            />
         </Link>
         {/* Toggle Button for Mobile View */}
         <button
@@ -66,10 +75,15 @@ const Navbar = () => {
                   {/* Image for Larger Screens */}
                   <Link className="nav-link d-none d-lg-flex align-items-center" to="/dashboard">
                     <img
-                      src={Image} // Replace with the actual profile image path
+                      src={Profile} // Replace with the actual profile image path
                       alt="Profile"
                       className="rounded-circle me-2"
-                      style={{ width: "30px", height: "30px", objectFit: "cover" }}
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        objectFit: "cover",
+                        border: ".8px solid grey"
+                      }}
                     />
                   </Link>
                   {/* Text for Smaller Screens */}

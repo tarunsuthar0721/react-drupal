@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import "../assets/styles/Dashboard.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const Dashboard = () => {
@@ -52,10 +51,10 @@ const Dashboard = () => {
   return (
     <div className="dashboard-wrapper rounded">
       {/* Sidebar */}
-      <div className="sidebar">
+      <div className="sidebar m-3 rounded">
         <div className="profile-section">
           <img
-            src={user?.profile_picture || "/default-profile.png"}
+            src={user?.profile_picture}
             alt="Profile"
             className="profile-image"
           />
