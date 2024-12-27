@@ -13,23 +13,23 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          // Attempt to log in the user
-          const response = await loginUser(email, password);
-          console.log("Login successful:", response);
-      
-          // Store auth token and user details in localStorage
-          localStorage.setItem("authToken", response.token);
-          localStorage.setItem("user", JSON.stringify(response.user));
-      
-          // Update user state and navigate to dashboard
-          setUser(response.user);
-          navigate("/dashboard");
-        } catch (err) {
-          console.error("Error during login:", err);
-          setError("Login failed. Please check your credentials.");
-        }
+            // Attempt to log in the user
+            const response = await loginUser(email, password);
+            console.log("Login successful:", response);
+        
+            // Store auth token and user details in localStorage
+            localStorage.setItem("authToken", response.token);
+            localStorage.setItem("user", JSON.stringify(response.user));
+        
+            // Update user state and navigate to dashboard
+            setUser(response.user);
+            navigate("/dashboard");
+          } catch (err) {
+            console.error("Error during login:", err);
+            setError("Login failed. Please check your credentials.");
+          }
       };
-      
+       
 
     return (
 

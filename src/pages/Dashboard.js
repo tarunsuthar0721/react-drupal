@@ -15,7 +15,7 @@ const Dashboard = () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (!token || !storedUser) {
-      navigate("/login"); 
+      navigate("/login");  
     }
   }, [navigate]);
 

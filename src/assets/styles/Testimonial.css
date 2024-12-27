@@ -1,0 +1,39 @@
+.testimonial-slide {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.testimonial-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.testimonial-description {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    background-color: black;
+}
+
+.custom-heading {
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Makes the text bold */
+    color: #333; /* Sets a dark gray color */
+    letter-spacing: 1px; /* Adds spacing between letters */
+    text-transform: uppercase; /* Converts text to uppercase */
+    margin-bottom: 1.5rem; /* Adds spacing below */
+  }

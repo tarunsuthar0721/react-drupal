@@ -5,6 +5,7 @@ const API = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true,
 });
 
 export const loginUser = async (email, password) => {
@@ -79,5 +80,26 @@ export const registerUser = async (userData) => {
     throw new Error(
       error.response?.data?.error || "An error occurred during registration."
     );
+  }
+};
+
+export const getHeroBanner = async () => {
+  try {
+    const response = await API.get('/api/hero-banner');
+    return response.data[0]; // Assuming the JSON is an array and we want the first item
+  } catch (error) {
+    console.error('Error fetching hero banner data:', error);
+    throw error; // Rethrow the error for further handling in the component
+  }
+};
+
+
+export const getTestimonials = async () => {
+  try {
+    const response = await API.get('/api/testimonial');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching hero banner data:', error);
+    throw error;
   }
 };
