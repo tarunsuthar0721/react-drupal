@@ -44,14 +44,6 @@ const Register = () => {
       <section className="py-3 py-md-5 py-xl-8">
         <div className="container py-5">
           <div className="row justify-content-center">
-          {error && (
-                      <div className="alert alert-danger">{error}</div>
-                    )}
-                    {successMessage && (
-                      <div className="alert alert-success">
-                        {successMessage}
-                      </div>
-                    )}
             <div className="col-12 col-md-8 col-lg-6 col-xl-4 border p-4 p-md-5">
               <div className="mb-4">
                 <h2 className="display-6 fw-bold text-center">Sign up</h2>
@@ -61,8 +53,15 @@ const Register = () => {
                     Login
                   </a>
                 </p>
+                {error && (
+                      <div className="alert alert-danger">{error}</div>
+                    )}
+                    {successMessage && (
+                      <div className="alert alert-success">
+                        {successMessage} 
+                      </div>
+                    )}
               </div>
-
               <form onSubmit={handleSubmit}>
                 <div className="row gy-3">
                   <div className="col-12">

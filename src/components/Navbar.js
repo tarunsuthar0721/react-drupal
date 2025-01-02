@@ -35,7 +35,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="navbar navbar-expand-lg mt-2">
+    <nav className="navbar sticky-top navbar-expand-lg mt-2">
       <div className={`container ${isDesktop ? "rounded-pill" : "rounded"}`}>
         {/* Logo */}
         <Link className="logo-head navbar-brand" to="/">

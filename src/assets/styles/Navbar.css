@@ -2,10 +2,31 @@
     background-color: white;
 }
 
-.navbar .container {
+/* .navbar .container {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 25%;
+} */
+
+.navbar .container {
+    /* background-color: rgb(255, 255, 255);  */
+    box-shadow: 
+        0px 4px 6px rgba(0, 0, 0, 0.1), /* Subtle shadow below */
+        inset 0px -2px 6px rgba(0, 0, 0, 0.1), /* Inner shadow for 3D effect */
+        inset 0px 2px 6px rgba(255, 255, 255, 0.799); /* Light highlight on top */
+    border-radius: 50px; /* Makes the container pill-shaped */
+    padding: 10px 20px; /* Adds spacing inside the container */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for structure */
+    transition: all 0.3s ease; /* Smooth transitions on hover or focus */
+}
+
+/* Add hover effect for interactivity */
+.navbar .container:hover {
+    box-shadow: 
+        0px 6px 10px rgba(0, 0, 0, 0.2), 
+        inset 0px -2px 6px rgba(0, 0, 0, 0.15), 
+        inset 0px 2px 6px rgba(255, 255, 255, 0.799);
+    transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
 .navbar-nav {
