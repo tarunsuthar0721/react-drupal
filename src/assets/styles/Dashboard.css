@@ -86,6 +86,10 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    .dashboard-wrapper .content {
+      padding: 10px;
+    }
+
     .dashboard-wrapper .sidebar {
       width: 80px; /* Shrink sidebar */
       align-items: center;
@@ -124,5 +128,83 @@
     .dashboard-wrapper .content {
       padding: 10px;
     }
+  }
+
+
+  .profile-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .profile-title {
+    margin-bottom: 15px;
+  }
+  
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-group label {
+    flex: 0 0 100px;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    flex: 1;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+  
+  .profile-details p {
+    margin: 0;
+    /* font-weight: bold; */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .profile-container .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .profile-container .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .profile-container .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .edit-button {
+    align-self: flex-end;
+  }
+  .edit-form .btn{
+    width: 90px;
+    margin-top: 5px;
+    align-self: flex-end;
   }
   

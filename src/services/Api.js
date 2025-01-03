@@ -27,7 +27,9 @@ export const loginUser = async (email, password) => {
         name: response.data.name ,
         email: response.data.email ,
         profile_picture: response.data.profile_picture ,
-        // picture: response.data.picture ,
+        status: response.data.status ,
+        roles: response.data.roles ,
+        
       }));
 
       return {
@@ -37,6 +39,8 @@ export const loginUser = async (email, password) => {
           name: response.data.name,
           email: response.data.email,
           profile_picture: response.data.profile_picture,
+          status: response.data.status ,
+          roles: response.data.roles ,
         },
       };
     } else {
@@ -47,6 +51,23 @@ export const loginUser = async (email, password) => {
     throw new Error(error.response?.data?.message || "Login failed");
   }
 };
+
+export const updateUser = async (formData) => {
+  try {
+    const response = await API.post("/api/user-update", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    console.log("User update response:", response.data);
+    return response.data; // Return the response
+  } catch (error) {
+    console.error("Update User error:", error);
+    throw new Error(error.response?.data?.message || "Update User failed");
+  }
+};
+
 
 // Function to handle user logout with CSRF token
 export const logoutUser = async () => {
