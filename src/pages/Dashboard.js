@@ -58,15 +58,16 @@ const Dashboard = () => {
       formDataToSubmit.append("name", formData.name);
       formDataToSubmit.append("email", formData.email);
       formDataToSubmit.append("profile_picture", formData.profile_picture);
-  
+      
+
       const response = await updateUser(formDataToSubmit);
       console.log("Update successful:", response);
-  
+
       setUser((prevUser) => ({
         ...prevUser,
         name: formData.name,
         email: formData.email,
-        profile_picture: response.data.profile_picture, // Update with the uploaded image URL
+        profile_picture: response?.profile_picture || prevUser?.profile_picture, // Update with the uploaded image URL
       }));
       setIsEditing(false);
     } catch (err) {
@@ -195,7 +196,7 @@ const Dashboard = () => {
       <div className="sidebar m-3 rounded">
         <div className="profile-section">
           <img
-            src={user?.profile_picture}
+            src={`${user?.profile_picture}?t=${new Date().getTime()}`}
             alt="Profile"
             className="profile-image"
           />

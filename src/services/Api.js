@@ -53,7 +53,7 @@ export const loginUser = async (email, password) => {
 };
 
 export const updateUser = async (formData) => {
-  try {
+  try { 
     const response = await API.post("/api/user-update", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
