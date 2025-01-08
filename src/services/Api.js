@@ -124,3 +124,13 @@ export const getTestimonials = async () => {
     throw error;
   }
 };
+
+export const getProducts = async () => {
+  try {
+    const response = await API.get("/api/product");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error; // Rethrow the error to handle it in the calling component
+  }
+};

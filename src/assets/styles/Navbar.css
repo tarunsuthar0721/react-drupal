@@ -8,16 +8,9 @@
     border-radius: 25%;
 } */
 
-.navbar .container {
-    /* background-color: rgb(255, 255, 255);  */
-    box-shadow: 
-        0px 4px 6px rgba(0, 0, 0, 0.1), /* Subtle shadow below */
-        inset 0px -2px 6px rgba(0, 0, 0, 0.1), /* Inner shadow for 3D effect */
-        inset 0px 2px 6px rgba(255, 255, 255, 0.799); /* Light highlight on top */
-    border-radius: 50px; /* Makes the container pill-shaped */
-    padding: 10px 20px; /* Adds spacing inside the container */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for structure */
-    transition: all 0.3s ease; /* Smooth transitions on hover or focus */
+.navbar {
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
 /* Add hover effect for interactivity */
@@ -30,9 +23,9 @@
 }
 
 .navbar-nav {
-    width: 100%; /* Ensures the full width for proper alignment */
+    /* width: 100%; */
     display: flex;
-    justify-content: space-between; /* Space out links properly */
+    /* justify-content: space-between; */
     align-items: center;
 }
 

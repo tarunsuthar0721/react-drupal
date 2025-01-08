@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import Profile from "../assets/images/Avatar-659652_640.webp";
 import Logo from "../assets/images/logo.svg";
 import "../assets/styles/global.css";
@@ -12,10 +12,10 @@ import "../assets/styles/Navbar.css";
 const Navbar = () => {
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
-  const isDesktop = useMediaQuery({ minWidth: 992 });
+  // const isDesktop = useMediaQuery({ minWidth: 992 });
   const location = useLocation();
   const isActive = (path) => {
-    return location.pathname === path ? "active": "";
+    return location.pathname === path ? "active" : "";
   }
 
   const handleLogout = async () => {
@@ -35,8 +35,8 @@ const Navbar = () => {
 
 
   return (
-    <nav className="navbar sticky-top navbar-expand-lg mt-2">
-      <div className={`container ${isDesktop ? "rounded-pill" : "rounded"}`}>
+    <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid mx-1 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">
         {/* Logo */}
         <Link className="logo-head navbar-brand" to="/">
           <img
@@ -62,23 +62,29 @@ const Navbar = () => {
 
         {/* Collapsible Section */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto d-flex align-items-center w-100">
+          <ul className="navbar-nav mx-auto d-flex align-items-center">
             {/* Home Page Link */}
             <li className="nav-item mx-auto">
               <Link className={`nav-link text-center ${isActive('/')}`} to="/">
                 Home
               </Link>
             </li>
-
+            <li className="nav-item mx-auto">
+              <Link className={`nav-link text-center ${isActive('/shop')}`} to="/shop">
+                Shop
+              </Link>
+            </li>
+          </ul>
+          <ul className="navbar-nav d-flex align-items-end">
             {!user ? (
               <>
-                <li className="nav-item">
-                  <Link className={`nav-link ${isActive('/login')}`} to="/login">
+                <li className="nav-item mx-auto">
+                  <Link className={`nav-link text-center ${isActive('/login')}`} to="/login">
                     Login
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className={`nav-link ${isActive('/register')}`} to="/register">
+                <li className="nav-item mx-auto">
+                  <Link className={`nav-link text-center ${isActive('/register')}`} to="/register">
                     Sign Up
                   </Link>
                 </li>
@@ -86,7 +92,7 @@ const Navbar = () => {
             ) : (
               <>
                 {/* Dashboard/Profile Icon */}
-                <li className="nav-item ">
+                <li className="nav-item mx-auto ">
                   {/* Image for Larger Screens */}
                   <Link className="nav-link d-none d-lg-flex align-items-center" to="/dashboard">
                     <img
@@ -106,7 +112,7 @@ const Navbar = () => {
                     Dashboard
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item mx-auto">
                   <button
                     className="nav-link btn btn-link"
                     onClick={handleLogout}

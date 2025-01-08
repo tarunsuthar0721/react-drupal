@@ -20,21 +20,23 @@ const HeroBanner = () => {
     }
 
     return (
-        <div className="row">
-            <div className="col-lg-6 d-flex flex-column justify-content-center">
-                <div className="banner-title">
-                    <h1>{bannerData.title}</h1>
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-6 d-flex flex-column justify-content-center">
+                    <div className="banner-title">
+                        <h1>{bannerData.title}</h1>
+                    </div>
+                    <div className="banner-content">
+                        {bannerData.text}
+                    </div>
                 </div>
-                <div className="banner-content">
-                    {bannerData.text}
-                </div>
-            </div>
-            <div className="col-lg-6">
-                <div className="banner-image">
-                    <img
-                        src={bannerData.image}
-                        alt="Precise Thick-N INSTANT"
-                    />
+                <div className="col-lg-6">
+                    <div className="banner-image">
+                        <img
+                            src={bannerData.image}
+                            alt="Precise Thick-N INSTANT"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
