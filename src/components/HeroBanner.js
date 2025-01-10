@@ -30,7 +30,7 @@ const HeroBanner = () => {
                         {bannerData.text}
                     </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 d-flex flex-column justify-content-center">
                     <div className="banner-image">
                         <img
                             src={bannerData.image}

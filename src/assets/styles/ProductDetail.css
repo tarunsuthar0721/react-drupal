@@ -1,0 +1,76 @@
+.img-thumbnail {
+    border: 2px solid #ddd;
+    transition: transform 0.2s ease;
+  }
+  .img-thumbnail:hover {
+    transform: scale(1.1);
+    border-color: #333;
+  }
+  .img-main {
+    height: 70vh;
+  }
+
+
+/* Main Product Detail Container */
+.product-detail {
+    background: linear-gradient(135deg, #f3f4f6, #e9ecef); /* Subtle gradient for the background */
+    padding: 30px 0;
+    /* border-radius: 10px; */
+}
+
+
+
+/* Main Image */
+.product-detail .img-main {
+    border: 5px solid #ffffff; /* Add white border for a clean look */
+    background: linear-gradient(135deg, #007bff, #6f42c1); /* Gradient border shadow */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail .img-main:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail Images */
+.product-detail .img-thumbnail {
+    border: 2px solid transparent; /* Clean border */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-detail .img-thumbnail:hover {
+    border-color: #007bff; /* Highlighted border on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+
+
+
+
+.product-detail p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+}
+
+/* Add spacing between thumbnails */
+.product-detail .img-thumbnail {
+    margin: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-detail h1 {
+        font-size: 2rem;
+    }
+
+    .product-detail .img-main {
+        max-width: 100%;
+    }
+
+    .product-detail .img-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}

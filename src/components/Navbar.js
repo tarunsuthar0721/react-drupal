@@ -1,46 +1,41 @@
-import React from "react";
+// import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-// import { useMediaQuery } from "react-responsive";
+// import { getCategory } from "../services/Api"; 
 import Profile from "../assets/images/Avatar-659652_640.webp";
 import Logo from "../assets/images/logo.svg";
 import "../assets/styles/global.css";
 import "../assets/styles/Navbar.css";
 
-
-const Navbar = () => {
+const Navbar = ({categories }) => {
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
-  // const isDesktop = useMediaQuery({ minWidth: 992 });
   const location = useLocation();
+
   const isActive = (path) => {
     return location.pathname === path ? "active" : "";
-  }
+  };
 
   const handleLogout = async () => {
     try {
       setUser(null);
-      // Clear user-related data from localStorage
       localStorage.removeItem("authToken");
       localStorage.removeItem("csrf_token");
       localStorage.removeItem("user");
-
-      // Optionally, navigate to login page
       navigate("/login");
     } catch (error) {
       console.error("Logout failed:", error);
     }
   };
 
-
   return (
-    <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar sticky-top navbar-expand-lg">
       <div className="container-fluid mx-1 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">
         {/* Logo */}
         <Link className="logo-head navbar-brand" to="/">
           <img
-            src={Logo} // Replace with the actual profile image path
+            src={Logo}
             alt="Logo"
             className="m-2 px-2"
             style={{ width: "100px", height: "30px", objectFit: "cover" }}
@@ -63,52 +58,79 @@ const Navbar = () => {
         {/* Collapsible Section */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto d-flex align-items-center">
-            {/* Home Page Link */}
-            <li className="nav-item mx-auto">
-              <Link className={`nav-link text-center ${isActive('/')}`} to="/">
+            <li className="nav-item mx-1">
+              <Link className={`nav-link text-center ${isActive("/")}`} to="/">
                 Home
               </Link>
             </li>
-            <li className="nav-item mx-auto">
-              <Link className={`nav-link text-center ${isActive('/shop')}`} to="/shop">
+
+            <li className="nav-item mx-1">
+              <Link className={`nav-link text-center ${isActive("/shop")}`} to="/shop">
                 Shop
               </Link>
             </li>
+
+            {/* Category Dropdown */}
+            <li className="nav-item dropdown mx-1 dropdown-hover">
+              <Link
+                className="nav-link text-center dropdown-toggle"
+                to="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Category
+              </Link>
+              <ul className="dropdown-menu">
+                {categories.length > 0 ? (
+                  categories.map((category) => (
+                    <li key={category.id}>
+                      <Link className="dropdown-item" to={category.url}>
+                        {category.name}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <span className="dropdown-item text-muted">No categories available</span>
+                  </li>
+                )}
+              </ul>
+            </li>
+
           </ul>
+
           <ul className="navbar-nav d-flex align-items-end">
             {!user ? (
               <>
                 <li className="nav-item mx-auto">
-                  <Link className={`nav-link text-center ${isActive('/login')}`} to="/login">
+                  <Link className={`nav-link text-center ${isActive("/login")}`} to="/login">
                     Login
                   </Link>
                 </li>
                 <li className="nav-item mx-auto">
-                  <Link className={`nav-link text-center ${isActive('/register')}`} to="/register">
+                  <Link className={`nav-link text-center ${isActive("/register")}`} to="/register">
                     Sign Up
                   </Link>
                 </li>
               </>
             ) : (
               <>
-                {/* Dashboard/Profile Icon */}
-                <li className="nav-item mx-auto ">
-                  {/* Image for Larger Screens */}
+                <li className="nav-item mx-auto">
                   <Link className="nav-link d-none d-lg-flex align-items-center" to="/dashboard">
                     <img
-                      src={Profile} // Replace with the actual profile image path
+                      src={Profile}
                       alt="Profile"
                       className="rounded-circle me-2"
                       style={{
                         width: "30px",
                         height: "30px",
                         objectFit: "cover",
-                        border: ".8px solid grey"
+                        border: ".8px solid grey",
                       }}
                     />
                   </Link>
-                  {/* Text for Smaller Screens */}
-                  <Link className={`nav-link d-flex d-lg-none ${isActive('/dashboard')}`} to="/dashboard">
+                  <Link className={`nav-link d-flex d-lg-none ${isActive("/dashboard")}`} to="/dashboard">
                     Dashboard
                   </Link>
                 </li>
@@ -126,7 +148,6 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-
   );
 };
 

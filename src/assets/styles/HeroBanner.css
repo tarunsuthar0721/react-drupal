@@ -7,8 +7,8 @@
 /* Title styling */
 .banner-title h1 {
     font-family: 'Playfair Display', serif; /* Elegant serif font for a premium feel */
-    font-size: 4.5rem;
-    color: #3d3535; /* Sophisticated dark slate gray */
+    font-size: 5.5rem;
+    color: #241e1e; /* Sophisticated dark slate gray */
     font-weight: 700; /* Bold for emphasis */
     margin-bottom: 10px;
     letter-spacing: 1px; /* Slightly spaced letters for modern elegance */
@@ -29,7 +29,7 @@
 
 /* Image Styling */
 .banner-image img {
-    width: 100%;
+    width: 80%;
     height: auto;
     margin-bottom: 20px;
     transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;

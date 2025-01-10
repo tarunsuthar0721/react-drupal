@@ -1,210 +1,218 @@
 /* Restrict styles to Dashboard component only */
 .dashboard-wrapper {
-    display: flex;
-    min-height: 85vh;
-    background: linear-gradient(to right, #fafafaf1, #c8abecc8);
+  display: flex;
+  min-height: 85vh;
+  background: linear-gradient(to right, #fafafaf1, #c8abecc8);
+}
+
+/* Sidebar */
+.dashboard-wrapper .sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease;
+}
+
+.dashboard-wrapper .sidebar .profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-wrapper .profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid #6b459dfd;
+}
+
+.dashboard-wrapper .nav {
+  width: 100%;
+}
+
+.dashboard-wrapper .nav-item {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.dashboard-wrapper .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  color: #9275b9e9;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dashboard-wrapper .nav-link i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #9275b9e9;
+}
+
+.dashboard-wrapper .nav-link .nav-text {
+  display: inline-block;
+}
+
+.dashboard-wrapper .nav-link:hover {
+  background-color: #f0edf5;
+}
+
+/* Desktop Active Link Shadow */
+.dashboard-wrapper .nav-link.active {
+  background-color: #fff;
+  color: #6b459dfd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Add box-shadow on desktop */
+}
+
+.dashboard-wrapper .nav-link.active i {
+  color: #6b459dfd;
+}
+
+/* Main Content */
+.dashboard-wrapper .content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-wrapper .content {
+    padding: 10px;
   }
-  
-  /* Sidebar */
+
   .dashboard-wrapper .sidebar {
-    width: 250px;
-    background-color: #ffffff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s ease;
-  }
-  
-  .dashboard-wrapper .sidebar .profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-wrapper .profile-image {
     width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 1px solid #6b459dfd;
-  }
-  
-  .dashboard-wrapper .nav {
-    width: 100%;
-  }
-  
-  .dashboard-wrapper .nav-item {
-    margin-bottom: 10px;
-    text-align: left;
-  }
-  
-  .dashboard-wrapper .nav-link {
-    display: flex;
+    /* Shrink sidebar */
     align-items: center;
-    padding: 10px; 
-    border-radius: 5px;
-    color: #9275b9e9;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-    font-family: 'Montserrat', sans-serif;
   }
-  
+
+  .dashboard-wrapper .sidebar .profile-section {
+    display: none;
+    /* Hide profile section on smaller screens */
+  }
+
+  .dashboard-wrapper .nav-link {
+    justify-content: center;
+    padding: 10px 10px;
+
+  }
+
   .dashboard-wrapper .nav-link i {
-    font-size: 20px;
-    margin-right: 10px;
-    color: #9275b9e9;
+    margin-right: 0;
+    font-size: 24px;
+    /* Slightly larger icons for better visibility */
+    color: #a485ccc8;
+    /* Ensure icon color stands out */
+    visibility: visible;
+    /* Ensure icons remain visible */
   }
-  
+
   .dashboard-wrapper .nav-link .nav-text {
-    display: inline-block;
+    display: none;
+    /* Hide text in mobile view */
   }
-  
-  .dashboard-wrapper .nav-link:hover {
-    background-color: #f0edf5;
-  }
-  
-  /* Desktop Active Link Shadow */
+
+  /* Mobile Active Link Shadow */
   .dashboard-wrapper .nav-link.active {
     background-color: #fff;
     color: #6b459dfd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box-shadow on desktop */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    /* Add filter shadow for mobile */
   }
-  
-  .dashboard-wrapper .nav-link.active i {
-    color: #6b459dfd;
-  }
-  
-  /* Main Content */
+}
+
+@media (max-width: 576px) {
   .dashboard-wrapper .content {
-    flex: 1;
-    padding: 20px;
+    padding: 10px;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .dashboard-wrapper .content {
-      padding: 10px;
-    }
-
-    .dashboard-wrapper .sidebar {
-      width: 80px; /* Shrink sidebar */
-      align-items: center;
-    }
-  
-    .dashboard-wrapper .sidebar .profile-section {
-      display: none; /* Hide profile section on smaller screens */
-    }
-  
-    .dashboard-wrapper .nav-link {
-      justify-content: center;
-      padding: 10px 10px;
-      
-    }
-  
-    .dashboard-wrapper .nav-link i {
-      margin-right: 0;
-      font-size: 24px; /* Slightly larger icons for better visibility */
-      color: #a485ccc8; /* Ensure icon color stands out */
-      visibility: visible; /* Ensure icons remain visible */
-    }
-  
-    .dashboard-wrapper .nav-link .nav-text {
-      display: none; /* Hide text in mobile view */
-    }
-  
-    /* Mobile Active Link Shadow */
-    .dashboard-wrapper .nav-link.active {
-      background-color: #fff;
-      color: #6b459dfd;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); /* Add filter shadow for mobile */
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .dashboard-wrapper .content {
-      padding: 10px;
-    }
-  }
+}
 
 
-  .profile-container {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-  }
-  
-  .profile-title {
-    margin-bottom: 15px;
-  }
-  
-  .edit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .form-group {
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-group label {
-    flex: 0 0 100px;
-    margin-right: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-  }
-  
-  .form-control {
-    flex: 1;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  .profile-details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-  }
-  
-  .profile-details p {
-    margin: 0;
-    /* font-weight: bold; */
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .profile-container .btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .profile-container .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .profile-container .btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-  }
-  
-  .edit-button {
-    align-self: flex-end;
-  }
-  .edit-form .btn{
-    width: 90px;
-    margin-top: 5px;
-    align-self: flex-end;
-  }
-  
+.profile-container {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.profile-title {
+  margin-bottom: 15px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-group label {
+  flex: 0 0 100px;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.form-control {
+  flex: 1;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.profile-details p {
+  margin: 0;
+  /* font-weight: bold; */
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profile-container .btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.profile-container .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.profile-container .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.edit-button {
+  align-self: flex-end;
+}
+
+.edit-form .btn {
+  width: 90px;
+  margin-top: 5px;
+  align-self: flex-end;
+}

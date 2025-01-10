@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../services/Api";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+  // const navigate = useNavigate();
 
   // Fetch products from API
   useEffect(() => {
@@ -81,7 +84,9 @@ const ProductList = () => {
 
               {/* Footer */}
               <div className="card-footer text-center">
-                <button className="btn btn-dark">View Details</button>
+                <Link to={`/product/${product.title}`} className="btn btn-dark">
+                  View Details
+                </Link>
               </div>
             </div>
           </div>

@@ -1,0 +1,87 @@
+/* Title Styling */
+.category-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Slider Styling */
+.category-slider {
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* Center-align cards */
+  overflow: hidden; /* Hide the scrollbar and extra content */
+  padding: 1rem;
+  position: relative;
+}
+
+/* Card Container for Continuous Scrolling */
+.category-slider .scroll-track {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Continuous smooth scrolling */
+}
+
+/* Card Styling */
+.category-card {
+  flex: 0 0 220px; /* Default width for cards */
+  text-align: center;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.category-image {
+  height: 30vh; /* Fixed height for images */
+  object-fit: cover; /* Ensure images look good */
+  border-radius: 8px;
+}
+
+.category-name {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Link Styling */
+.category-link {
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+}
+
+/* Keyframe Animation for Continuous Scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Duplicate Cards to Create Infinite Scroll Effect */
+.category-slider .scroll-track .category-card {
+  flex: 0 0 220px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Tablet: Show 3 cards */
+  .category-card {
+    flex: 0 0 calc(100% / 3 - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mobile: Show 2 cards */
+  .category-card {
+    flex: 0 0 calc(100% / 2 - 1rem);
+  }
+}

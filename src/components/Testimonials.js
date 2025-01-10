@@ -20,7 +20,7 @@ const Testimonials = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container my-5">
                 <div id="testimonialSlider" className="carousel slide" data-bs-ride="carousel">
                     <h2 className="text-center mb-4 custom-heading">{heading}</h2>
                     <div className="carousel-inner">

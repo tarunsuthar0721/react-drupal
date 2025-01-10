@@ -131,6 +131,26 @@ export const getProducts = async () => {
     return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
-    throw error; // Rethrow the error to handle it in the calling component
+    throw error; 
+  }
+};
+
+export const getProductByTitle = async (productTitle) => {
+  try {
+    const response = await API.get(`/api/product/${encodeURIComponent(productTitle)}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products detail:", error);
+    throw error; 
+  }
+};
+
+export const getCategory = async () => {
+  try {
+    const response = await API.get("/api/category");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching category:", error);
+    throw error;
   }
 };

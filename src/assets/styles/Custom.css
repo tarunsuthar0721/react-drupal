@@ -1,0 +1,4 @@
+.app .main-cls{
+    background: linear-gradient(135deg, #f3f4f6, #e9ecef); /* Subtle gradient for the background */
+      padding: 30px 0;
+  }
