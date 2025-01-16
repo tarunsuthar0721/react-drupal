@@ -39,7 +39,7 @@
 }
 
 .category-image {
-  height: 30vh; /* Fixed height for images */
+  height: 50vh; /* Fixed height for images */
   object-fit: cover; /* Ensure images look good */
   border-radius: 8px;
 }

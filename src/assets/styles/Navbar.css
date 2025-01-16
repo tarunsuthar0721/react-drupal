@@ -104,17 +104,15 @@
 
     .dropdown-menu.show {
         display: contents;
-        
     
     }
 
     .dropdown-menu>li {
         margin-left: 60px;
-        /* Remove spacing between list items */
     }
 
     .dropdown-menu .dropdown-item {
-        padding: 10px 15px;
+        padding: 5px 0 5px 80px;
         /* Adjust padding for consistency */
         text-align: left;
         /* Align text properly */

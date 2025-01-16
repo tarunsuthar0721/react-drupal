@@ -19,6 +19,11 @@
 }
 
 
+.main-cls{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 /* Main Image */
 .product-detail .img-main {
