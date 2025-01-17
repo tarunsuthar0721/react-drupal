@@ -39,9 +39,33 @@ const Category = ({ categories }) => {
   }, []);
 
   return (
-    <div className="my-5 text-center">
+    <div className="category-container my-5 text-center">
       <h1 className="category-title">Category</h1>
       <div ref={sliderRef} className="category-slider">
+        {categories.length > 0 ? (
+          categories.map(
+            (category) =>
+              category.image &&
+              category.image !== "No image field or image available" && ( // Check if image exists and is not the placeholder message
+                <a
+                  key={category.id}
+                  href={category.url} // Redirect to the category's URL
+                  className="category-link"
+                >
+                  <div className="category-card">
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="category-image"
+                    />
+                    <h3 className="category-name">{category.name}</h3>
+                  </div>
+                </a>
+              )
+          )
+        ) : (
+          <p>No categories available</p>
+        )}
         {categories.length > 0 ? (
           categories.map(
             (category) =>
